@@ -1,18 +1,15 @@
 ## Introduction
-A django project for doctors listing and to book appointments for patients. The system is for two kinds for user. For doctors and patients. Doctors can register, login and set there schedule accordigly. Patients can register, login, see all the available doctors based on location, specialization, and day of the week, and book an appointment also.
+A django project for task management. User can register, log in, and create, update, and set deadlines.  
 
-There are 7 endpoints:
-* 3 for Doctors side
-* 4 for Patient side
+* There are 6 endpoints:
 
-#### Watch the video demo [here](https://drive.google.com/file/d/1XsqvOv1S-7yjZhHjwlqHQSu--Py35LZe/view?usp=sharing)
 
 ### Features
-* Only Authenticated users can set doctors' schedules, get the list of doctors, and book an appointment.
-* Token Authentication is used for the Authorization. 
+* Only Authenticated users can see, create, update, and search for the tasks.
+* Session Authentication is used for the Authorization. 
 
 ### Installation Guide
-* Clone the repo from [here](https://github.com/harsh10tech/doctor-appointment.git).
+* Clone the repo from [here](https://github.com/harsh10tech/task-management).
 * Python is a must for the project, so install Python if not already there.
 
 
@@ -22,17 +19,16 @@ There are 7 endpoints:
 
 
 ### API Endpoints
-The base url for all API endpoints is: _`locahost:8000/`_ and [http://harshcode2020.pythonanywhere.com](http://harshcode2020.pythonanywhere.com)
+The base url for all API endpoints is: _`locahost:8000/`_ and [https://task-management-qhwg.onrender.com/](https://task-management-qhwg.onrender.com/)
 
 | Sl No.| HTTP Verbs | Endpoints | Action | 
 | --- | --- | --- | --- |
-| 1. | POST | `/doctorapi/doctor/signup/` | To sign up a new user account as a doctor| 
-| 2. | POST | `/doctorapi/doctor/signin/` | To login an existing user account as a doctor. Returns a token. |
-| 3. | POST | `/doctorapi/setdoc/setschedule/` | To create a new schedule or edit the existing one |
-| 4. | POST | `/patientapi/patient/signup/` | To sign up a new user account as patient. |
-| 5. | POST | `/patientapi/patient/signin/` | To login an existing user account as a patient. Returns a token. |
-| 6. | POST | `/patientapi/appointment/bookappointment/` | To book an appointment. |
-| 7. | GET | `/patientapi/appointment/getdoctors/` | To retrive all the doctors and their data for the current month.  |
+| 1. | POST | `/register/` | To sign up a new user account| 
+| 2. | POST | `/login/` | To login an existing user.|
+| 3. | POST | `/tasks/` | To add a new task|
+| 4. | PUT or POST | `/update-task/<id>/` | To update a task |
+| 5. | POST | `/delete-task/<id>/` | To delete a task |
+| 6. | GET | `/logout/` | To logout of the current session |
 
 ### Technologies Used 
 * Django, Django-rest_framework

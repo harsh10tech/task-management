@@ -66,9 +66,6 @@ def tasks(request):
         title = data.get('title')
         description = data.get('description')
         date = data.get('date')
-        print(title)
-        print(date)
-        print(request.user)
 
         task = Tasks.objects.create(
             user = User.objects.filter(username=request.user)[0],
