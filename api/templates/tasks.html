@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block start %}
+<div class = "container mt-5 ">
+    <div class ="col-6 mx-auto"><h2>Set your Tasks here!!</h2></div>
+    <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Add Tasks</h2>
+        <hr>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Task title</label>
+          <input name= "title" required "text" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1"  class="form-label">Description</label>
+          <textarea name = "description" required class = "form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Date</label>
+            <input name ="date" required type="date" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success">Add Task</button>
+      </form>
+<hr>
+      <div class="mt-5">
+        <div class="mx-auto col-6">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputPassword1"  class="form-label">Search Task</label>
+              <input name = "search" class = "form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+        </div>
+      </div>
+
+  </div>
+
+
+{% if tasks %}
+  
+<table class="table container mt-4 shadow-lg">
+  <thead>
+    <tr>
+      <th scope="col">Sl. No.</th>
+      <th scope="col">Task Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody> 
+    {% for task in tasks %} 
+    <tr>
+      <th scope="row" name=id>{{forloop.counter}}</th>
+      <td>{{task.title}}</td>
+      <td>{{task.description}}</td>
+      <td>
+        {{task.date}}
+        <td>
+          <a href="/update-task/{{task.id}}" class="btn btn-success m-2">Update</a>
+
+          <a href="/delete-task/{{task.id}}" class="btn btn-danger m-2 p-1" >Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endif %}
+
+{% endblock %}

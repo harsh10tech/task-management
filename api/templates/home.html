@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block start %}
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="heroimage">
+                {% load static %}
+                <img src="{% static 'bgimg.jpg' %}" alt="">
+            </div>
+            <div class="herocontent">
+                
+                <div><h1>TASK MANAGER</h1></div>
+                <h4>By Harsh Sharma</h4>
+                <p>A task management web application to keep you updated with your schedule!!</p>
+                <a href="/login">
+                    <button class="explore_btn">
+                        LOGIN IN
+                      </button>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

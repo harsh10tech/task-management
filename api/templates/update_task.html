@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block start %}
+    <div class = "container mt-5 ">
+        <div class ="col-6 mx-auto"><h2>Update your task!!</h2></div>
+        <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data" action="{% url 'update_task' task.id %}">
+        <input type="hidden" name="_method" value="put">
+            {% csrf_token %}
+            <h3>Update Task {{task.title}}</h3>
+            <hr>
+            <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Task Title</label>
+            <input name= "title" value="{{task.title}}" required "text" class="form-control">
+            </div>
+            <div class="mb-3">
+            <label for="exampleInputPassword1"  class="form-label">Description</label>
+            <textarea name = "description" required class = "form-control">{{task.description}}</textarea>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Date</label>
+                <input name ="date" type="date" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Update Task</button>
+        </form>
+    </div>
+
+{% endblock%}

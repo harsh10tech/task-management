@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+html,body{
+    line-height: 1.4;
+    font-weight: 300;
+    font-family: sans-serif;
+    background-color: aliceblue;
+    border-radius: 2% 2%;
+    align-items: center;
+}
+.container{
+    display: flex;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    padding: 40px;
+    margin: 20px;
+
+    
+}
+.hero{
+    display: flex;
+    box-shadow: 2px 2px 2px;
+border-radius: 5% 5%;
+}
+.herocontent{
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.h1{
+    font-weight: 100;
+    background-color: aquamarine;
+
+}
+.h2{
+    margin-top: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+button{
+    margin-top: 20px;
+    padding: 10px 15px;
+    border: none;
+    transition: 0.2s ease-in-out;
+}
+    
+button :hover
+{
+    opacity: 0.3;
+    transition: 0.2s ease-in-out;
+}
+ 
+.explore_btn{
+    background-color: orange;
+    padding: 10px;
+    color: white;
+    align-self: flex-start;
+}
+.navigation{
+    
+    position: sticky;
+    top: 0;
+    margin-bottom: 32px;
+    background: white;
+    padding: 15px;
+}
+.navigation, p{
+    display: flex;;
+}
